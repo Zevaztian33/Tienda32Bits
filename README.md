@@ -1,5 +1,5 @@
 # tienda_8bits
-
+<img src="./src/assets/Muestra.png">
 ## Project setup
 ```
 npm install
