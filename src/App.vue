@@ -1,16 +1,24 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div id="nav" class="bg-info">
+      32-Bits <img src="./assets/joystick.png" alt="logo"> |
+      <router-link to="/">Inicio</router-link> |
+      <router-link :to="{name: 'Busqueda'}">Búsqueda</router-link> |
+      <router-link :to="{name: 'Ventas'}">Ventas</router-link> |
+      <router-link :to="{name: 'Total'}">Total</router-link>
     </div>
-    <router-view/>
+    <transition name="fade" mode="out-in">
+      <router-view/>
+    </transition>
   </div>
 </template>
 
 <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Press Start 2P', cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -27,6 +35,17 @@
 }
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+  color: white;
+}
+
+#nav img{
+  width: 80px;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
 </style>
